@@ -9,10 +9,10 @@ several python 3.7 applications to send or receive events to or from an Azure Ev
 mkvirtualenv    
 pip install --pre  azure.eventhub
 
-## features
+## Features
  - events-receiver.py    
     to receive events (you will have to set EventPosition to get the latest events)    
   - events-listener.py    
-    this application use a recursive method that tracks all the events untill the latest, then listen the latest event
+    this application use a recursive method that tracks all the events untill the latest, then listen to the latest event
 
 
