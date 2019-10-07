@@ -7,7 +7,12 @@ several python 3.7 applications to send or receive events to or from an Azure Ev
 
 ## Installation
 mkvirtualenv    
-pip install --pre  azure.eventhub
+pip install --pre  azure.eventhub    
+Add a config.py file   
+In the config.py file, add a variable connection_str
+Value of the variable : connection_str = 'Endpoint=sb://<your enventhub namespace name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<vaue of your shared ket>;EntityPath=<name of your event hub>     
+
+
 
 ## Features
  - events-receiver.py    
