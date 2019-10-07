@@ -2,12 +2,13 @@ import logging
 from azure.eventhub import EventHubClient, EventData, EventPosition
 import config as cfg
 
-
-#EVENT_POSITION = EventPosition("12500000")
-EVENT_POSITION = EventPosition("-1")
+# set your event position to have the latest one so as you can see the latest events
+EVENT_POSITION = EventPosition("14500000")
+#EVENT_POSITION = EventPosition("-1")
 PARTITION = "0"
 client = EventHubClient.from_connection_string(cfg.connection_str)
-consumer = client.create_consumer(consumer_group="$default", partition_id=PARTITION, event_position=EVENT_POSITION, prefetch=100000)
+#for a vanilla eventhub repalce custom by $default
+consumer = client.create_consumer(consumer_group="custom", partition_id=PARTITION, event_position=EVENT_POSITION, prefetch=100000)
 total=0
 last_offset = -1
 with consumer:
