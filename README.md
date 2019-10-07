@@ -10,7 +10,7 @@ mkvirtualenv
 pip install --pre  azure.eventhub    
 Add a config.py file   
 In the config.py file, add a variable connection_str     
-connection_str = 'Endpoint=sb://<your enventhub namespace name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<vaue of your shared ket>;EntityPath=<name of your event hub>     
+connection_str = 'Endpoint=sb://&lt;your enventhub namespace name>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=&lt;vaue of your shared ket>;EntityPath=&lt;name of your event hub>     
    
 
 
