@@ -6,7 +6,7 @@ def getEvents(lastOffset):
     try:
         client = EventHubClient.from_connection_string(cfg.connection_str)
         EVENT_POSITION = EventPosition(lastOffset)
-        #for a vanilla eventhub repalce custom by $default
+        #for a vanilla eventhub replace "custom" consumer_group by "$default"
         consumer = client.create_consumer(consumer_group="custom", partition_id=PARTITION, event_position=EVENT_POSITION, prefetch=100000)
         total=0
         last_offset = -1
@@ -34,7 +34,7 @@ def getEvents(lastOffset):
 EVENT_POSITION = EventPosition("-1")
 PARTITION = "0"
 client = EventHubClient.from_connection_string(cfg.connection_str)
-#for a vanilla eventhub repalce custom by $default
+#for a vanilla eventhub replace "custom" consumer_group by "$default"
 consumer = client.create_consumer(consumer_group="custom", partition_id=PARTITION, event_position=EVENT_POSITION, prefetch=100000)
 total=0
 last_offset = -1
